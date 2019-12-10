@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leap Motion", "Assembly-CSharp.csproj", "{D64CFDA5-44D9-D6C0-8A8D-3E7D426AD750}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{D64CFDA5-44D9-D6C0-8A8D-3E7D426AD750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leap Motion", "Assembly-CSharp-Editor.csproj", "{E536AF72-5390-8C85-7362-EB145B4DCD1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{E536AF72-5390-8C85-7362-EB145B4DCD1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
