@@ -1,0 +1,10 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (SampleVS2010.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Sample.cpp
+  Generating code
+  0 of 172 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SampleVS2012.vcxproj -> C:\Users\edenb\Documents\Year 4\Y4-Project2\LeapDeveloperKit_2.3.1+31549_win\LeapSDK\samples\Release\Sample.exe
+  Copy required DLLs
+          1 file(s) copied.
