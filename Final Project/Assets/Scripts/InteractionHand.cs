@@ -7,23 +7,23 @@ using UnityEngine;
 
 public class InteractionHand : MonoBehaviour {
 
-	Controller controller = new Controller();
+    Controller controller;
 	Frame frame;
 	Frame previous;
 	Hand hand;
-	// Use this for initialization
-	void Start () {
-		if(controller.isConnected())
+    // Use this for initialization
+    void Start()
+    {
+        controller = new Controller();
+        frame = controller.Frame();
+        previous = controller.Frame(1);
+        if (frame.Hands.Count > 0)
         {
-			frame = controller.Frame();
-			previous = controller.Frame(1);
-			if (frame.Hands.Count > 0)
-			{
-				List<Hand> hands = frame.Hands;
-				hand = frame.Hands[0];
-			}
-		}
-	}
+            List<Hand> hands = frame.Hands;
+            hand = frame.Hands[0];
+        }
+
+    }
 
 	public Hand SourceHand
 	{
@@ -39,10 +39,10 @@ public class InteractionHand : MonoBehaviour {
 		{
 			
 			// Use the rotation from the live data
-			var handRotation = hand.Rotation.ToQuaternion();
-
+			var handRotation = hand.Rotation.x;
+            Debug.Log("hand detect");
 			// Transform the copied hand so that it's centered on the current hands position and matches it's rotation.
-			transform(hand.PalmPosition.ToVector3(), handRotation);
+			//transform.Rotate(hand.Rotation.ToVector3());
 		}
 
 	}
