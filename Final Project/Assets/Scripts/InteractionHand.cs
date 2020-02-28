@@ -128,7 +128,7 @@ public class InteractionHand : MonoBehaviour {
         controller = new Controller();
         Frame frame = controller.Frame();
         List<Hand> hands = frame.Hands;
-        if (frame.Hand.Count > 0)
+        if (frame.Hands.Count > 0)
         {
             Hand fristHand = hands[0];
         }
