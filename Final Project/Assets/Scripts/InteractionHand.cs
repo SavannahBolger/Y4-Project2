@@ -149,7 +149,9 @@ public class InteractionHand : MonoBehaviour {
 
         if(HandPalmYaw > -2f && HandPalmYaw < 3.5f)
         {
-            transform.rotation *= Quaternion.Euler( HandPalmPitch, 0, HandPalmRoll);
+            //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, 0);
+            //transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
+            transform.rotation *= Quaternion.Euler( 0, HandPalmYaw, 0);
         }
     }
 }
