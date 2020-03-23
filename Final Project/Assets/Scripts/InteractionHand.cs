@@ -121,6 +121,8 @@ public class InteractionHand : MonoBehaviour {
     float HandPalmYaw;
     float HandPalmRoll;
     float HandWristRot;
+    public float x = 0.0f;
+    public float z = 0.0f;
 
     void Start()
     {
@@ -142,16 +144,64 @@ public class InteractionHand : MonoBehaviour {
         HandPalmYaw = hands[0].PalmNormal.Yaw;
 
         HandWristRot = hands[0].WristPosition.Pitch;
+        x = transform.rotation.x * 100;
+        z = transform.rotation.z * 100;
 
         Debug.Log("Pitch :" + HandPalmPitch);
         Debug.Log("Roll :" + HandPalmRoll);
         Debug.Log("Yaw :" + HandPalmYaw);
 
-        if(HandPalmYaw > -2f && HandPalmYaw < 3.5f)
+        if(hands[0] == null)
         {
-            //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, 0);
-            //transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
-            transform.rotation *= Quaternion.Euler( 0, HandPalmYaw, 0);
+            //wait(5000);
+            if(x > 0)
+            {
+                transform.Rotate(-1, 0, 0);
+            }
+            else if (x < 0)
+            {
+                transform.Rotate(1, 0, 0);
+            }
+
+            if (z > 0)
+            {
+                transform.Rotate(0, 0, -1);
+            }
+            else if (z < 0)
+            {
+                transform.Rotate(0, 0, 1);
+            }
+        }
+
+        if (HandPalmYaw > -2f && HandPalmYaw < 3.5f)
+        {
+            if ((z > -34.0f && z < 34.0f) || (x < 34.0f && x > -34.0f))
+            {
+                //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, HandPalmRoll);
+                //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
+                //transform.rotation *= Quaternion.Euler(0, HandPalmYaw, 0);
+            }
         }
     }
+
+    //void wait(int milliseconds)
+    //{
+    //    System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
+    //    if (milliseconds == 0 || milliseconds < 0) return;
+    //    //Console.WriteLine("start wait timer");
+    //    timer1.Interval = milliseconds;
+    //    timer1.Enabled = true;
+    //    timer1.Start();
+    //    timer1.Tick += (s, e) =>
+    //    {
+    //        timer1.Enabled = false;
+    //        timer1.Stop();
+    //        //Console.WriteLine("stop wait timer");
+    //    };
+    //    while (timer1.Enabled)
+    //    {
+    //        Application.DoEvents();
+    //    }
+    //}
 }
