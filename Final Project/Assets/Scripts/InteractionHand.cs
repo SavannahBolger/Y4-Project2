@@ -151,26 +151,13 @@ public class InteractionHand : MonoBehaviour {
         Debug.Log("Roll :" + HandPalmRoll);
         Debug.Log("Yaw :" + HandPalmYaw);
 
-        if(hands[0] == null)
+        if(Input.GetKey(KeyCode.LeftArrow))
         {
             //wait(5000);
-            if(x > 0)
-            {
-                transform.Rotate(-1, 0, 0);
-            }
-            else if (x < 0)
-            {
-                transform.Rotate(1, 0, 0);
-            }
-
-            if (z > 0)
-            {
-                transform.Rotate(0, 0, -1);
-            }
-            else if (z < 0)
-            {
-                transform.Rotate(0, 0, 1);
-            }
+           
+                transform.rotation.x = 0;
+                transform.rotation.y = 0;
+                transform.rotation.z =  0;
         }
 
         if (HandPalmYaw > -2f && HandPalmYaw < 3.5f)
