@@ -151,22 +151,20 @@ public class InteractionHand : MonoBehaviour {
         Debug.Log("Roll :" + HandPalmRoll);
         Debug.Log("Yaw :" + HandPalmYaw);
 
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.R))
         {
             //wait(5000);
-           
-                transform.rotation.x = 0;
-                transform.rotation.y = 0;
-                transform.rotation.z =  0;
+
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (HandPalmYaw > -2f && HandPalmYaw < 3.5f)
         {
-            if ((z > -34.0f && z < 34.0f) || (x < 34.0f && x > -34.0f))
+            if (z > -34.0f || z < 34.0f || x < 34.0f || x > -34.0f)
             {
-                //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, HandPalmRoll);
+                transform.rotation *= Quaternion.Euler((HandPalmPitch*0.5f), 0, (HandPalmRoll * 0.5f));
                 //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, 0);
-                transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
+                //transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
                 //transform.rotation *= Quaternion.Euler(0, HandPalmYaw, 0);
             }
         }
