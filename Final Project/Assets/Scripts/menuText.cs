@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI
+using UnityEngine.UI;
 
 public class menuText : MonoBehaviour {
 
-	//public Text menuText;
-	//public Text playText;
-	//public Text optionsText;
-	//public Text quitText;
+    public Text titleText;
+    public Text playText;
+    public Text optionsText;
+    public Text quitText;
 
-	public bool isGame;
+    public bool isGame;
 	public bool isOptions;
 	public bool isQuit;
 
 	// Use this for initialization
 	void Start () {
-		menuText.text = "Main Menu";
+		titleText.text = "Main Menu";
 		playText.text = "Play Game";
 		optionsText.text = "Settings";
 		quitText.text = "Quit Game";
