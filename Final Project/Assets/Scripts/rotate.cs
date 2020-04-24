@@ -35,17 +35,18 @@ public class rotate : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            if (x < 34.0f)
+            if (x > -34.0f)
             {
-                transform.Rotate(1, 0, 0);
+                transform.Rotate(-1, 0, 0);
             }
+           
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            if (x > -34.0f)
+            if (x < 34.0f)
             {
-                transform.Rotate(-1, 0, 0);
+                transform.Rotate(1, 0, 0);
             }
         }
     }

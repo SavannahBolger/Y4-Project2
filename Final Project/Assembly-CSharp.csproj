@@ -239,8 +239,10 @@
      <Compile Include="Assets\LeapMotion\Core\Scripts\Utils\XRSupportUtil.cs" />
      <Compile Include="Assets\LeapMotion\Core\Scripts\XR\LeapEyeDislocator.cs" />
      <Compile Include="Assets\LeapMotion\Core\Scripts\XR\XRHeightOffset.cs" />
+     <Compile Include="Assets\Scripts\Buttons.cs" />
      <Compile Include="Assets\Scripts\GoalCollision.cs" />
      <Compile Include="Assets\Scripts\InteractionHand.cs" />
+     <Compile Include="Assets\Scripts\menuClick.cs" />
      <Compile Include="Assets\Scripts\menuText.cs" />
      <Compile Include="Assets\Scripts\rotate.cs" />
      <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
