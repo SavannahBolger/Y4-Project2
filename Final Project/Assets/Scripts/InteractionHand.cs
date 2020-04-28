@@ -124,6 +124,7 @@ public class InteractionHand : MonoBehaviour {
     public float x = 0.0f;
     public float z = 0.0f;
 
+
     void Start()
     {
 
@@ -158,17 +159,44 @@ public class InteractionHand : MonoBehaviour {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (HandPalmYaw > -2f && HandPalmYaw < 3.5f)
+        //if (HandPalmYaw > -2f && HandPalmYaw < 3.5f)
+        //{
+        //if (z > -34.0f || z < 34.0f || x < 34.0f || x > -34.0f)
+        //{
+        //    //transform.rotation *= Quaternion.Euler((HandPalmPitch*0.5f) / 2, 0, (HandPalmRoll * 0.5f) / 2);
+        //    transform.rotation *= Quaternion.Euler(HandPalmPitch /2, 0, 0);
+        //   transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
+        //    //transform.rotation *= Quaternion.Euler(0, HandPalmYaw, 0);
+        //}
+
+        if (z > -24.0f && HandPalmPitch > -1.3f)
         {
-            if (z > -34.0f || z < 34.0f || x < 34.0f || x > -34.0f)
-            {
-                transform.rotation *= Quaternion.Euler((HandPalmPitch*0.5f), 0, (HandPalmRoll * 0.5f));
-                //transform.rotation *= Quaternion.Euler(HandPalmPitch, 0, 0);
-                //transform.rotation *= Quaternion.Euler(0, 0, HandPalmRoll);
-                //transform.rotation *= Quaternion.Euler(0, HandPalmYaw, 0);
-            }
+            transform.Rotate(0, 0, -1);
+        }
+
+
+
+        if (z < 24.0f && HandPalmPitch < -1.3f)
+        {
+            transform.Rotate(0, 0, 1);
+        }
+
+
+
+        if (x > -24.0f && HandPalmPitch < -1.5f)
+        {
+            transform.Rotate(-1, 0, 0);
+        }
+
+
+
+
+        if (x < 24.0f && HandPalmPitch > -1.5f)
+        {
+            transform.Rotate(1, 0, 0);
         }
     }
+}
 
     //void wait(int milliseconds)
     //{
@@ -189,4 +217,4 @@ public class InteractionHand : MonoBehaviour {
     //        Application.DoEvents();
     //    }
     //}
-}
+

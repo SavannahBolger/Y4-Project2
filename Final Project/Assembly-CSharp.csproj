@@ -245,6 +245,8 @@
      <Compile Include="Assets\Scripts\menuClick.cs" />
      <Compile Include="Assets\Scripts\menuText.cs" />
      <Compile Include="Assets\Scripts\rotate.cs" />
+     <Compile Include="Assets\Scripts\setTimer.cs" />
+     <Compile Include="Assets\Scripts\TimerScript.cs" />
      <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
      <None Include="Assets\LeapMotion\Core\README_BEFORE_UPDATING.txt" />
      <None Include="Assets\LeapMotion\Core\readme.txt" />

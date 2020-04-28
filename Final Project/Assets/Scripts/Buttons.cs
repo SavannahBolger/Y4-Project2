@@ -7,6 +7,7 @@ public class Buttons : MonoBehaviour
 {
 
     int index = 1;
+    int time = 0;
 
     void OnCollisionEnter(Collision col)
     {
@@ -76,7 +77,7 @@ public class Buttons : MonoBehaviour
         }
         Debug.Log(index);
         PlayerPrefs.SetInt("Score", SceneManager.GetActiveScene().buildIndex);
-        if (index < )
+        if (index < 4)
         {
             SceneManager.LoadScene("Next");
         }
@@ -88,7 +89,7 @@ public class Buttons : MonoBehaviour
 
     public void ReplayGame()
     {
-        index = PlayerPrefs.GetInt("Score");
+        index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index);
     }
 }
