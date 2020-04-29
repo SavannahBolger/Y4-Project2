@@ -169,29 +169,22 @@ public class InteractionHand : MonoBehaviour {
         //    //transform.rotation *= Quaternion.Euler(0, HandPalmYaw, 0);
         //}
 
-        if (z > -24.0f && HandPalmPitch > -1.3f)
+        if (z > -20.0f && HandPalmPitch > -1.0f)
         {
             transform.Rotate(0, 0, -1);
         }
-
-
-
-        if (z < 24.0f && HandPalmPitch < -1.3f)
+        else if (z < 20.0f && HandPalmPitch < -1.0f)
         {
             transform.Rotate(0, 0, 1);
         }
 
 
 
-        if (x > -24.0f && HandPalmPitch < -1.5f)
+        if (x > -20.0f && HandPalmPitch < -1.5f)
         {
             transform.Rotate(-1, 0, 0);
         }
-
-
-
-
-        if (x < 24.0f && HandPalmPitch > -1.5f)
+        else if (x < 20.0f && HandPalmPitch > -1.5f)
         {
             transform.Rotate(1, 0, 0);
         }
